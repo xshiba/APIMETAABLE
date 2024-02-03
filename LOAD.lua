@@ -46,3 +46,12 @@ spawn(function()
         return old(...)
     end)
 end)
+task.spawn(function()
+    while true do wait()
+        pcall(function()
+            if not game:GetService("CoreGui").NINONOOB.Main.Top.NameHub.Text:find("Maru") then
+                while true do end
+            end
+        end)
+    end
+end)
