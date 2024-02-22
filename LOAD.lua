@@ -5,6 +5,9 @@ spawn(function()
     gg.__namecall = newcclosure(function(...)
         local method = getnamecallmethod()
         local args = {...}
+        if not (MagnetDoughtDF) then
+            return old(unpack(args))
+        end
         if tostring(method) == "FireServer" then
             if tostring(args[1]) == "RemoteEvent" then
                 if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
@@ -29,6 +32,9 @@ spawn(function()
     gg.__namecall = newcclosure(function(...)
         local method = getnamecallmethod()
         local args = {...}
+        if not (MagnetDoughtDF) then
+            return old(unpack(args))
+        end
         if tostring(method) == "FireServer" then
             if tostring(args[1]) == "RemoteEvent" then
                 if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
