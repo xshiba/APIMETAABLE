@@ -4,7 +4,7 @@ local old = mt.__namecall
 mt.__namecall = newcclosure(function(...)
     local method = getnamecallmethod()
     local args = {...}
-    if not SeaEventsEnabled and
+    if not MagnetDoughtDF and
     not EnabledAttackSeaB and
     not SeaEventsEnabled then
         return old(unpack(args))
