@@ -85,16 +85,6 @@ task.spawn(function()
         return old(...)
     end)
 end)
-pcall(function ()
-    task.spawn(function()
-        wait(30)
-        getgenv().Hermanos_Settings = {
-            ['key'] = 'a6c027df-b06b-468b-bd91-19c214b9562e',
-            ['PC'] = 'MARU'
-            }
-        task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/script.lua'))() end)
-    end)
-end)
 task.spawn(function()
     while true do wait()
         pcall(function()
