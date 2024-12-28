@@ -1,4 +1,19 @@
-task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/middle.lua'))() end)
+task.spawn(function() 
+	local old 
+	old = hookmetamethod(game, "__namecall", function(self, ...)
+		local args = {...}
+		if getnamecallmethod() == "FireServer" and tostring(self) == "RE/ShootGunEvent" and (_G.StartAttack and _G.TargetPos ~= nil) then 
+			pcall(function()
+				args[1] = _G.TargetPos.Position
+                args[2] = {
+                    _G.TargetPos
+                }
+				return old(self, unpack(args))
+			end)
+		end
+		return old(self, ...) 
+	end)
+end)
 local mt = getrawmetatable(game)
 setreadonly(mt,false)
 local old = mt.__namecall
